@@ -14,6 +14,7 @@ public class Foods {
 	private int originPrice;
 	private int price;
 	private Set<Orders> orders = new HashSet<>();
+	private Set<Images> images = new HashSet<>();
 	public Integer getId() {
 		return id;
 	}
@@ -43,6 +44,12 @@ public class Foods {
 	}
 	public void setOrders(Set<Orders> orders) {
 		this.orders = orders;
+	}
+	public Set<Images> getImages() {
+		return images;
+	}
+	public void setImages(Set<Images> images) {
+		this.images = images;
 	}
 	
 }

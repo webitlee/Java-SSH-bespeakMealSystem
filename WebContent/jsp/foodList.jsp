@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_CN">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,115 +23,29 @@
             </a>
             <span> 点餐</span>
          </div>
-         ${requestScope.foods}
         <div class="weui_tab_bd">
             <ul>
-                <li>
-                    <a href="foodDetails.html">
+            	<c:forEach var="food" items="${requestScope.foods}">
+            		<li>
+                    <a href="/ordering/jsp/foodDetails.jsp?id=${food.id}">
                         <div class="foodList">
                             <div class="foodImg">
-                                <img src="../img/sbj.jpg" alt="">
+                            	<c:forEach var="image" items="${food.images}">
+                            		<c:if test="${image.listImage}">
+                            			<img src="${image.url}" alt="">
+                            		</c:if>
+                            	</c:forEach>
                             </div>
                             <div class="foodInfo">
                                 <br>
-                                <span class="foodName">三杯鸡套餐</span><br><br>
-                                <span class="presentPrice">￥40</span>
-                                <span class="originalPrice">原价￥50</span>
+                                <span class="foodName">${food.name}</span><br><br>
+                                <span class="presentPrice">￥${food.price}</span>
+                                <span class="originalPrice">原价￥${food.originPrice}</span>
                             </div>
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="foodDetails.html">
-                        <div class="foodList">
-                            <div class="foodImg">
-                                <img src="../img/hsr.jpg" alt="">
-                            </div>
-                            <div class="foodInfo">
-                                <br>
-                                <span class="foodName">红烧肉套餐</span><br><br>
-                                <span class="presentPrice">￥40</span>
-                                <span class="originalPrice">原价￥50</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="foodDetails.html">
-                        <div class="foodList">
-                            <div class="foodImg">
-                                <img src="../img/gljr.jpg" alt="">
-                            </div>
-                            <div class="foodInfo">
-                                <br>
-                                <span class="foodName">咖喱鸡肉套餐</span><br><br>
-                                <span class="presentPrice">￥40</span>
-                                <span class="originalPrice">原价￥50</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="foodDetails.html">
-                        <div class="foodList">
-                            <div class="foodImg">
-                                <img src="../img/mckr.jpg" alt="">
-                            </div>
-                            <div class="foodInfo">
-                                <br>
-                                <span class="foodName">梅菜扣肉套餐</span><br><br>
-                                <span class="presentPrice">￥40</span>
-                                <span class="originalPrice">原价￥50</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="foodDetails.html">
-                        <div class="foodList">
-                            <div class="foodImg">
-                                <img src="../img/rmsdj.jpg" alt="">
-                            </div>
-                            <div class="foodInfo">
-                                <br>
-                                <span class="foodName">肉末酸豆角套餐</span><br><br>
-                                <span class="presentPrice">￥40</span>
-                                <span class="originalPrice">原价￥50</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="foodDetails.html">
-                        <div class="foodList">
-                            <div class="foodImg">
-                                <img src="../img/yxrs.jpg" alt="">
-                            </div>
-                            <div class="foodInfo">
-                                <br>
-                                <span class="foodName">鱼香肉丝套餐</span><br><br>
-                                <span class="presentPrice">￥40</span>
-                                <span class="originalPrice">原价￥50</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="foodDetails.html">
-                        <div class="foodList">
-                            <div class="foodImg">
-                                <img src="../img/xgjt.jpg" alt="">
-                            </div>
-                            <div class="foodInfo">
-                                <br>
-                                <span class="foodName">香菇鸡腿套餐</span><br><br>
-                                <span class="presentPrice">￥40</span>
-                                <span class="originalPrice">原价￥50</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-
+            	</c:forEach>
             </ul>
         </div>
     </div>

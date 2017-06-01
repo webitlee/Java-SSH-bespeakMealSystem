@@ -18,7 +18,7 @@ public class FoodsController {
 	
 	@RequestMapping("/foodsList")
 	public String getFoods(HttpServletRequest request){
-		List<Object> foods = foodsService.getFoods();;
+		List<Object> foods = foodsService.getFoods();
 		request.setAttribute("foods", foods);
 		return "foodList";
 	}

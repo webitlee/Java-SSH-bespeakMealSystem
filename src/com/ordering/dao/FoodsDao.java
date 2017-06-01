@@ -20,4 +20,6 @@ public class FoodsDao {
 		List<Object> foods = query.list();
 		return foods;
 	}
+	
+	//获取所有
 }

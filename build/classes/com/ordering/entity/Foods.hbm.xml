@@ -17,13 +17,21 @@
         <property name="price" type="int">
             <column name="PRICE" not-null="true" default="0" length="5"/>
         </property>
-        <set name="orders" table="FOODS_ORDERS" inverse="true" lazy="true" cascade="save-update">
+        <set name="orders" table="FOODS_ORDERS" inverse="true" lazy="false" cascade="save-update">
             <key>
                 <column name="FOOD_ID" />
             </key>
             <many-to-many class="com.ordering.entity.Orders">
             	<column name="ORDER_ID"></column>
             </many-to-many>
+        </set>
+        <set name="images" table="FOODS_IMAGES" inverse="true" lazy="false" cascade="save-update">
+        	<key>
+        		<column name="FOOD_ID" not-null="true"></column>
+        	</key>
+        	<many-to-many class="com.ordering.entity.Images">
+        		<column name="IMAGE_ID" not-null="true"></column>
+        	</many-to-many>
         </set>
     </class>
 </hibernate-mapping>

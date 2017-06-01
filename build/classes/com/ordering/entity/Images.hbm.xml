@@ -14,8 +14,5 @@
         <property name="listImage" type="boolean">
             <column name="LISTIMAGE" not-null="true" default="false"/>
         </property>
-        <many-to-one name="foods" class="com.ordering.entity.Foods">
-            <column name="FOODS_ID" not-null="true"/>
-        </many-to-one>
     </class>
 </hibernate-mapping>

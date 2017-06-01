@@ -9,7 +9,6 @@ public class Images {
 	private Integer id;
 	private String url;
 	private boolean listImage;
-	private Foods foods;
 	public Integer getId() {
 		return id;
 	}
@@ -27,12 +26,6 @@ public class Images {
 	}
 	public void setListImage(boolean listImage) {
 		this.listImage = listImage;
-	}
-	public Foods getFoods() {
-		return foods;
-	}
-	public void setFoods(Foods foods) {
-		this.foods = foods;
 	}
 	
 	
