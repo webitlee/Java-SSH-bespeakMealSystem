@@ -1,0 +1,140 @@
+body, html {
+    height: 100%;
+    line-height: 1;
+    -webkit-tap-highlight-color: transparent;
+}
+ul,li{
+    margin: 0;
+    padding:0;
+}
+.weui-row {
+    margin-top: 10px;
+}
+[class*="weui-col-"] {
+   margin:10px auto 10px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.happyBuy {
+    width:100%;
+    height:240px;
+    background-image:url(/ordering/image/happyBuy.jpg ) ;
+    background-size:100% 100%;
+}
+.back{
+    width:100%;
+    height:50px;
+    background: lightblue ;
+    text-align: center ;
+    line-height:50px;
+    position: relative ;
+}
+.back img{
+    position: absolute ;
+    left:5px;
+    top:5px;
+}
+.back span{
+    font-size: 20px;
+    color: #fff;
+}
+.foodList {
+    width:100%;
+    height:125px;
+    border-bottom: 1px solid #eee;
+    font-size:0;
+    margin-bottom: 5px;
+}
+.foodList .foodImg {
+    display: inline-block ;
+    width:35%;
+    height:125px;
+
+}
+.foodList .foodInfo {
+    display: inline-block ;
+    width:65%;
+    height:125px;
+    font-size:20px;
+    vertical-align: top;
+
+}
+.swiper-container {
+    width: 100%;
+    height:200px;
+}
+
+.swiper-container img {
+    display: block;
+    width: 100%;
+    height:200px;
+}
+.foodName {
+    margin-left: 10px;
+}
+.presentPrice{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size:20px;
+}
+.originalPrice {
+    font-size: 15px;
+    color:#e4393c;
+    text-decoration: line-through ;
+}
+.foodName{
+    width:100%;
+    height:50px;
+    line-height: 50px;
+    font-size: 20px;
+    padding-left :20px;
+}
+.foodPrice {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #ddd;
+}
+.comment {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    position: relative ;
+}
+.comment span {
+    margin-left: 55px;
+}
+.commentLeft {
+    position: absolute ;
+    top:12px;
+    left:20px;
+}
+.commentRight {
+    position:absolute ;
+    top: 12px;
+    right: 20px;
+}
+.addShopCarContainer {
+    width:100%;
+    height:50px;
+    padding-left: 20px;
+    position: relative ;
+}
+
+.shopCar{
+    position: absolute ;
+    right:40px;
+}
+.paymoney {
+    width: 100%;
+    height:60px;
+    line-height: 60px;
+    text-align: center ;
+}
+.paymoney  span{
+    font-size: 20px;
+    color:#e4393c;
+}
+
+

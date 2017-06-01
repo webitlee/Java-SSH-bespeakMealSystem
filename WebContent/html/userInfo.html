@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../css/jquery-weui.css">
+    <link rel="stylesheet" href="../css/weui.css ">
+    <link rel="stylesheet" href="../css/mycss.css ">
+    <script src="../js/jquery-2.1.4.js"></script>
+    <script src="../js/jquery-weui.js "></script>
+    <script src="../js/weixin-1.2.0.js"></script>
+
+    <title></title>
+</head>
+<body ontouchstart>
+    <div class="weui_tab">
+        <div class="back">
+            <a href="shopCar.html ">
+                <img src="../img/back.png " alt="">
+            </a>
+            <span> 用户信息</span>
+        </div>
+        <div class="weui_tab_bd">
+            <div class="weui_cells weui_cells_form">
+                <form id="userInfo" action="">
+                    <div class="weui_cell">
+                        <div class="weui_cell_hd"><label class="weui_label">用户名</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <input class="weui_input" type="tel" placeholder="请输入用户名" name="userName">
+                        </div>
+                    </div>
+                    <div class="weui_cell">
+                        <div class="weui_cell_hd"><label class="weui_label">身份证号</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <input class="weui_input" type="tel" placeholder="请输入身份证号" name="userID">
+                        </div>
+                    </div>
+                    <div class="weui_cell">
+                        <div class="weui_cell_hd"><label class="weui_label">手机号</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <input class="weui_input" type="tel" placeholder="请输入手机号" name="userTelNum">
+                        </div>
+                    </div>
+                    <div class="weui_cell">
+                        <div class="weui_cell_hd"><label class="weui_label">列车车次</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <input class="weui_input" type="tel" placeholder="请输入列车车次" name="trainNum">
+                        </div>
+                    </div>
+                    <div class="weui_cell">
+                        <div class="weui_cell_hd"><label class="weui_label">座位号</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <input class="weui_input" type="tel" placeholder="请输入座位号" name="seatNum">
+                        </div>
+                    </div>
+                    <div class="weui_cell">
+                        请选择支付方式
+                    </div>
+                    <div class="weui_cell weui_cell_select">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <select class="weui_select" name="payMethod">
+                                <option value="1">微信支付</option>
+                                <option value="2">现金支付</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='demos-content-padded'>
+                        <a href="overShop.html" class="weui_btn weui_btn_primary" id="pay">确认支付</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $("#pay").click(function(){
+            var userJson=$("#userInfo").serializeArray ();
+            console.log(userJson);
+           $.ajax({
+               type:'post',
+               url:'',
+               data:userJson,
+               dataType:'json',
+               success:function(){
+                   //跳转到支付结束页面
+//                   wx.config({
+//                       debug: true,
+//                       appId: '',
+//                       timestamp: '',
+//                       nonceStr: '',
+//                       signature: '',
+//                       jsApiList: ['chooseWXPay']
+//                   });
+//                   wx.ready(function(){
+//                       wx.checkJsApi({
+//                           jsApiList: ['chooseWXPay'],
+//                           success: function (res) {
+//                               if (res.checkResult.chooseWXPay == false) {
+//                                   alert('您的微信版本过低，请更新后重试！');
+//                                   return;
+//                               }
+//                           }
+//                       });
+//                   });
+//                   wx.chooseWXPay({
+//                       timestamp: 0,
+//                       nonceStr: '',
+//                       package: '',
+//                       signType: '',
+//                       paySign: '',
+//                       success: function (res) {
+//
+//                       }
+//                   });
+               }
+           })
+        });
+    </script>
+</body>
+</html>

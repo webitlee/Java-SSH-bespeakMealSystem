@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-1 11:11:35 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ordering.entity.Images" table="IMAGES">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="url" type="java.lang.String">
+            <column name="URL" not-null="true" default="''" length="100"/>
+        </property>
+        <property name="listImage" type="boolean">
+            <column name="LISTIMAGE" not-null="true" default="false"/>
+        </property>
+        <many-to-one name="foods" class="com.ordering.entity.Foods">
+            <column name="FOODS_ID" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

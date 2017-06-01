@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-1 11:11:35 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ordering.entity.Foods" table="FOODS">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" not-null="true" default="''" length="50"/>
+        </property>
+        <property name="originPrice" type="int">
+            <column name="ORIGINPRICE" not-null="true" default="0" length="5"/>
+        </property>
+        <property name="price" type="int">
+            <column name="PRICE" not-null="true" default="0" length="5"/>
+        </property>
+        <set name="orders" table="FOODS_ORDERS" inverse="true" lazy="true" cascade="save-update">
+            <key>
+                <column name="FOOD_ID" />
+            </key>
+            <many-to-many class="com.ordering.entity.Orders">
+            	<column name="ORDER_ID"></column>
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

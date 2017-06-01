@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../css/jquery-weui.css">
+    <link rel="stylesheet" href="../css/weui.css ">
+    <link rel="stylesheet" href="../css/mycss.css ">
+    <script src="../js/jquery-2.1.4.js"></script>
+    <script src="../js/jquery-weui.js "></script>
+    <script src="../js/weixin-1.2.0.js"></script>
+    <title></title>
+    <style>
+        .num{
+            text-align: center ;
+        }
+        .num span{
+            display: inline-block ;
+            width:30px;
+            height:30px;
+            line-height: 30px;
+            border:1px solid #3d4145;
+            text-align: center ;
+
+        }
+    </style>
+</head>
+<body ontouchstart>
+    <div class="weui_tab">
+        <div class="back">
+            <a href="foodList.html ">
+                <img src="../img/back.png " alt="">
+            </a>
+            <span>购物车</span>
+        </div>
+        <div class="weui_tab_bd">
+            <div>
+                <ul>
+                    <li>
+                            <div class="foodList">
+                                <div class="foodImg">
+                                    <img src="../img/sbj.jpg" alt="">
+                                </div>
+                                <div class="foodInfo">
+                                    <br>
+                                    <span class="sbj">三杯鸡套餐</span><br><br>
+                                    <span class="presentPrice">￥40</span><br>
+                                        <p class="num">
+                                            <span class="minus" >-</span>
+                                            <span class="show_num" >1</span>
+                                            <span class="plus">+</span>
+                                        </p>
+                                </div>
+                            </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="paymoney">
+                您需支付 <span>￥</span> <span class="numMoney"></span>
+            </div>
+            <div class='demos-content-padded'>
+                <a href="userInfo.html " class="weui_btn weui_btn_primary" id="toUserInfo">结算</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var single=Number ($(".presentPrice ").html().substring (1));
+            var count =Number ($(".show_num ").html());
+            $(".numMoney ").html(count*single);
+        });
+        $(".plus ").click(function(e){
+            var num=$(".show_num ").html();
+            num=Number (num) ;
+            num++;
+            $(".show_num ").html(num);
+            var single=Number ($(".presentPrice ").html().substring (1));
+
+            var count =Number ($(".show_num ").html());
+            $(".numMoney ").html(count*single);
+
+        });
+        $(".minus ").click(function(e){
+            var num=$(".show_num ").html();
+            num=Number (num) ;
+            if(num>=2){
+                num--;
+                $(".show_num ").html(num);
+                var single=Number ($(".presentPrice ").html().substring (1));
+                var count =Number ($(".show_num ").html());
+                $(".numMoney ").html(count*single);
+            } else {
+                $(document).on("click", ".minus", function() {
+                    $.confirm("您确定取消订购该食品吗?", "确认?", function() {
+                        $(".foodList ").html("");
+                        $.toast("已取消订购!");
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

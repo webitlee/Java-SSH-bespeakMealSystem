@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-1 11:11:35 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ordering.entity.Orders" table="ORDERS">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" not-null="true" default="''" length="100"/>
+        </property>
+        <property name="idcard" type="java.lang.String">
+            <column name="IDCARD" not-null="true" default="''" length="18"/>
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="PHONE" not-null="true" default="''" length="11"/>
+        </property>
+        <property name="trainNumber" type="java.lang.String">
+            <column name="TRAINNUMBER" not-null="true" default="''" length="20"/>
+        </property>
+        <property name="seatNumber" type="java.lang.String">
+            <column name="SEATNUMBER" not-null="true" default="''" length="20"/>
+        </property>
+        <property name="payment" type="java.lang.String">
+            <column name="PAYMENT" not-null="true" default="''" length="3"/>
+        </property>
+        <property name="finished" type="boolean">
+            <column name="FINISHED" not-null="true" default="false"/>
+        </property>
+        <property name="spend" type="float">
+            <column name="SPEND" not-null="true" default="0" length="5"/>
+        </property>
+        <property name="time" type="java.util.Date">
+            <column name="TIME" not-null="true" default="CURRENT_TIMESTAMP"/>
+        </property>
+        <set name="foods" table="FOODS_ORDERS" inverse="false" lazy="true" cascade="save-update">
+            <key>
+                <column name="ORDER_ID" />
+            </key>
+            <many-to-many class="com.ordering.entity.Foods" >
+            	<column name="FOOD_ID"></column>
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
