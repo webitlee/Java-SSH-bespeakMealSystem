@@ -27,7 +27,7 @@
             <ul>
             	<c:forEach var="food" items="${requestScope.foods}">
             		<li>
-                    <a href="/ordering/jsp/foodDetails.jsp?id=${food.id}">
+                    <a href="/ordering/foodDetails?id=${food.id}">
                         <div class="foodList">
                             <div class="foodImg">
                             	<c:forEach var="image" items="${food.images}">

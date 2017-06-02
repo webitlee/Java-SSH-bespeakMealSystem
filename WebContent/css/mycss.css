@@ -137,4 +137,23 @@ ul,li{
     color:#e4393c;
 }
 
+.tc-red{
+    color:#e4393c;
+}
+.ts-12{
+    font-size:12px;
+}
+.pos-rel{
+    position:relative;
+}
+.pos-ab{
+    position:absolute;
+}
+.top-n10{
+    top:-10px;
+}
+.right-0{
+    right:0;
+}
+
 
