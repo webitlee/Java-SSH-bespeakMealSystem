@@ -26,14 +26,17 @@
         <property name="payment" type="java.lang.String">
             <column name="PAYMENT" not-null="true" default="''" length="3"/>
         </property>
+        <property name="sum" type="java.lang.Integer">
+        	<column name="SUM" not-null="true" default="1" length="2"></column>
+        </property>
         <property name="finished" type="boolean">
             <column name="FINISHED" not-null="true" default="false"/>
         </property>
         <property name="spend" type="float">
             <column name="SPEND" not-null="true" default="0" length="5"/>
         </property>
-        <property name="time" type="java.util.Date">
-            <column name="TIME" not-null="true" default="CURRENT_TIMESTAMP"/>
+        <property name="time" type="timestamp">
+            <column name="TIME" not-null="true"/>
         </property>
         <set name="foods" table="FOODS_ORDERS" inverse="false" lazy="true" cascade="save-update">
             <key>

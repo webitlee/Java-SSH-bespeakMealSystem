@@ -18,7 +18,7 @@
 <body ontouchstart>
     <div class="weui_tab">
         <div class="back">
-            <a href="goShopping.html ">
+            <a id="btn_back" href="javascript:;">
                 <img src="/ordering/image/back.png " alt="">
             </a>
             <span> 点餐</span>
@@ -50,4 +50,10 @@
         </div>
     </div>
 </body>
+<script>
+	//后退按钮
+	$('#btn_back').click(function(){
+		history.back();
+	})
+</script>
 </html>

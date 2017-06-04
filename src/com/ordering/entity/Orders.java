@@ -17,6 +17,7 @@ public class Orders {
 	private String trainNumber;
 	private String seatNumber;
 	private String payment;
+	private Integer sum;
 	private boolean finished;
 	private float spend;
 	private Date time;
@@ -62,6 +63,12 @@ public class Orders {
 	}
 	public void setPayment(String payment) {
 		this.payment = payment;
+	}
+	public Integer getSum() {
+		return sum;
+	}
+	public void setSum(Integer sum) {
+		this.sum = sum;
 	}
 	public boolean isFinished() {
 		return finished;
